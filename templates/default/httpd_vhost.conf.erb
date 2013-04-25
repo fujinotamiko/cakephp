@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+	ServerName satesatehohoho_2013_04_12.com
+	DocumentRoot /var/www/satesatehohoho/app/webroot
+	ErrorLog "| /usr/sbin/rotatelogs /etc/httpd/logs/redmine_error_log.%Y%m 86400 540"
+	CustomLog "| /usr/sbin/rotatelogs /etc/httpd/logs/redmine_access_log.%Y%m%d 86400 540" combined
+	ServerAdmin admin@tasss.co.jp
+	<Directory "/var/www/satesatehohoho/app/webroot">
+		Options FollowSymLinks
+		AllowOverride All
+		Require all granted
+	</Directory>
+</VirtualHost>

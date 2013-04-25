@@ -1,0 +1,55 @@
+{
+	"php" : {
+		"packages" : [
+			"php54",
+			"php54-devel",
+			"php54-mysql",
+			"php54-pecl-imagick",
+			"php-pear"
+		],
+		"install_method" : "package"
+	},
+	"cakephp" : {
+		"app_name" : "satesatehohoho",
+		"version" : "2.3.2",
+		"datasource" : {
+			"default"  : "Mongodb.MongodbSource",
+			"username" : "cakephp",
+			"password" : "cakephp",
+			"host" : "localhost",
+			"port"     : "27017"
+		},
+		"Security" : {
+			"salt" : "DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9ii",
+			"cipherSeed" : "76859309657453542496749683644"
+		},
+		"plugins" : {
+			"debug_kit" : {
+				"repo_uri" : "git://github.com/cakephp/debug_kit.git",
+				"tag_version" : "refs/tags/2.2.0",
+				"name" : "DebugKit"
+			},
+			"media" : {
+				"repo_uri" : "git://github.com/bmcclure/CakePHP-Media-Plugin.git",
+				"reference" : "master",
+				"name" : "Media"
+			},
+			"cakephp-mongodb" : {
+				"repo_uri" : "git://github.com/ichikaway/cakephp-mongodb.git",
+				"reference" : "master",
+				"name" : "Mongodb"
+			}
+		}
+	},
+	"run_list" : [
+		"httpd24",
+		"mongodb",
+		"php",
+		"php::module_phpunit",
+		"php::module_xdebug",
+		"php::module_mongo",
+		"php::module_apc",
+		"cakephp",
+		"cakephp::plugins"
+	]
+}
